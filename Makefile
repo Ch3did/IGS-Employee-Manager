@@ -8,12 +8,13 @@ migrate:
 migrations:
 	@python manage.py makemigrations
 
-.PHONY: migrations_hard
+.PHONY: reset_db
 # Create database migrations whipping any data
-migrations_hard:
-	@rm -r igs_employee_manager/migrations/*
+reset:
 	@rm db.sqlite3
+	@rm -r igs_employee_manager/migrations/0*
 	@python manage.py makemigrations
+	@python manage.py migrate
 
 .PHONY: run
 # Start Server
