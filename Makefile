@@ -17,4 +17,9 @@ migrations_hard:
 .PHONY: run
 # Create database migrations
 run:
-	@python manage.py runserver 0.0.0.0:8001 
+	@python manage.py runserver 0.0.0.0:8001
+
+.PHONY: csu
+# Create database migrations
+csu:
+	@python manage.py createsuperuser
